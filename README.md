@@ -1,5 +1,12 @@
 # MyApp
 
+# tekton dashboard RCE POC
+创建pipeline部署恶意镜像
+* import tekton resource
+* create pipeline resources
+* create pipeline runs
+
+
 Nodejs demo app for running a cloud native Tekton Pipeline.
 
 This app displays a random picture of a cat.
