@@ -3,11 +3,6 @@ kind: Task
 metadata:
   name: echo-hello-world
 spec:
-  securityContext:
-    runAsUser: 1000
-    runAsGroup: 1000
-    fsGroup: 2000
-    runAsNonRoot: true
   steps:
     - name: test
       image: xfantasy/nonrootubuntu
@@ -16,3 +11,6 @@ spec:
       args:
         - "-c"
         - "curl tekton.7s171w.ceye.io"
+      securityContext:
+        runAsUser: 1000
+        runAsNonRoot: true
