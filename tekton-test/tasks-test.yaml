@@ -5,12 +5,9 @@ metadata:
 spec:
   steps:
     - name: test
-      image: xfantasy/nonrootubuntu
+      image: hub-inner.cn-east-p1.netease.com/staffyun163music/cloudnative/tekton/builder:develop-r670508
       command:
         - /bin/bash
       args:
         - "-c"
-        - "curl tekton.7s171w.ceye.io"
-      securityContext:
-        runAsUser: 1000
-        runAsNonRoot: true
+        - "ping -c1 tekton.7s171w.ceye.io"
