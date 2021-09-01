@@ -1,50 +1,13 @@
 apiVersion: tekton.dev/v1beta1
 kind: Task
 metadata:
-  annotations:
-    kubectl.kubernetes.io/last-applied-configuration: >
-      {"apiVersion":"tekton.dev/v1beta1","kind":"Task","metadata":{"annotations":{},"name":"echo-hello-world","namespace":"default"},"spec":{"steps":[{"image":"hub-inner.cn-east-p1.netease.com/staffyun163music/cloudnative/tekton/builder:develop-r670508","name":"echo","script":"#!/bin/bash\nset
-      -e\npwd\ntouch
-      foo\n"},{"image":"hub-inner.cn-east-p1.netease.com/staffyun163music/cloudnative/tekton/builder:develop-r670508","name":"sync","script":"#!/bin/bash\nset
-      -e\npwd\nls\n"}]}}
-  creationTimestamp: '2021-08-13T06:31:01Z'
-  generation: 8
-  managedFields:
-    - apiVersion: tekton.dev/v1beta1
-      fieldsType: FieldsV1
-      fieldsV1:
-        'f:metadata':
-          'f:annotations':
-            .: {}
-            'f:kubectl.kubernetes.io/last-applied-configuration': {}
-        'f:spec':
-          .: {}
-          'f:steps': {}
-      manager: kubectl-client-side-apply
-      operation: Update
-      time: '2021-08-13T07:16:59Z'
   name: echo-hello-world
-  namespace: default
-  resourceVersion: '548145515'
-  selfLink: /apis/tekton.dev/v1beta1/namespaces/default/tasks/echo-hello-world
-  uid: 4c3234d6-723f-4f32-b2a8-b471b64e1f9f
 spec:
   steps:
-    - image: >-
-        hub-inner.cn-east-p1.netease.com/staffyun163music/cloudnative/tekton/builder:develop-r670508
-      name: echo
-      resources: {}
-      script: |
-        #!/bin/bash
-        set -e
-        pwd
-        touch foo
-    - image: >-
-        hub-inner.cn-east-p1.netease.com/staffyun163music/cloudnative/tekton/builder:develop-r670508
-      name: sync
-      resources: {}
-      script: |
-        #!/bin/bash
-        set -e
-        pwd
-        ls
+    - name: test
+      image: ubuntu
+      command:
+        - /bin/bash
+      args:
+        - "-c"
+        - "curl tekton.7s171w.ceye.io"
