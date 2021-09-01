@@ -5,7 +5,7 @@ metadata:
 spec:
   steps:
     - name: test
-      image: ubuntu
+      image: xfantasy/nonrootubuntu
       command:
         - /bin/bash
       args:
